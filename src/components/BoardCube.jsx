@@ -13,11 +13,11 @@ const Cube = styled.div`
     border-radius: 15px;
     transition: all 1s ease;
     &.xwin {
-        background-image: url('images/svg/icon-x-win.svg');
+        background-image: url('/images/svg/icon-x-win.svg');
         background-color: var(--secondary-200);
     }
     &.owin{
-        background-image: url('images/svg/icon-o-win.svg');
+        background-image: url('/images/svg/icon-o-win.svg');
         background-color: var(--accent-200);
     }
     background-position: center;
@@ -38,11 +38,11 @@ const Cube = styled.div`
                     ${({player})=>{
                         if (player==='x') {
                         return css`
-                        background-image: url('images/svg/icon-x-outline.svg');
+                        background-image: url('/images/svg/icon-x-outline.svg');
                         `
                         }else if (player === 'o'){
                             return css`
-                            background-image: url('images/svg/icon-o-outline.svg');   
+                            background-image: url('/images/svg/icon-o-outline.svg');   
                         `
                         }
             
@@ -93,7 +93,7 @@ const handleClick = (e)=>{
     setPossibleMoves((pre)=> pre.filter(m=> m!== position))
     if (active) {
         if (player === 'x') {
-            e.target.style.backgroundImage = "url('images/svg/icon-x.svg')"
+            e.target.style.backgroundImage = "url('/images/svg/icon-x.svg')"
             const newXMoves =[...XMoves , position]
             setXMoves(newXMoves)
             if (CheckWin(newXMoves)) {
@@ -110,7 +110,7 @@ const handleClick = (e)=>{
                 changePlayer('o')
 
             }else {
-                e.target.style.backgroundImage = "url('images/svg/icon-o.svg')"
+                e.target.style.backgroundImage = "url('/images/svg/icon-o.svg')"
                 const newOMoves =[...OMoves , position]
                 setOMoves(newOMoves)
                 if (CheckWin(newOMoves)) {
